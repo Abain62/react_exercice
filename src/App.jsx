@@ -6,6 +6,12 @@ import Header from "./Header";
 function App() {
   const [user, setUser] = useState(false);
   const [search, setSearch] = useState("");
+  const [like, setLike] = useState(0);
+  
+
+  function addLike() {
+    setLike(like + 1);
+  }
 
   const toggleUser = () => {
     setUser(!user);
@@ -22,11 +28,13 @@ function App() {
         userToHeader={user}
         toggleUserMethod={toggleUser}
         SearchLogements={searchLogement}
+        addLike={like}
       />
       <Logements
         userToLogements={user}
         search={search}
-        RechercheLogement2={searchLogement}
+        AjoutLike={like}
+        addLike={addLike}
       />
     </div>
   );

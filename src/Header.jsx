@@ -1,6 +1,11 @@
 import React from "react";
 
-const Header = ({ userToHeader, toggleUserMethod, SearchLogements }) => {
+const Header = ({
+  userToHeader,
+  toggleUserMethod,
+  SearchLogements,
+  addLike,
+}) => {
   return (
     <header className="bg-white shadow-md p-4 flex flex-row justify-between items-center">
       <span className="text-xl font-bold text-red-500">
@@ -24,6 +29,7 @@ const Header = ({ userToHeader, toggleUserMethod, SearchLogements }) => {
             placeholder="Rechercher ..."
             onChange={(e) => SearchLogements(e)}
           />
+          <span className="text-gray-600">Favoris : {addLike}</span>
           <a href="#" className="text-gray-600 hover:text-black">
             Maisons
           </a>
